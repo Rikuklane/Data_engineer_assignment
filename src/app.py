@@ -1,8 +1,11 @@
 from flask import Flask
-from src.controller import get_company_information, get_all_information, get_company_price_history
+from src.controller import Controller
+import logging
 
 
 def create_app():
+    logging.basicConfig(filename='flask_logs.log', level=logging.DEBUG)
+
     app = Flask(__name__)
 
     @app.route('/')
@@ -11,15 +14,15 @@ def create_app():
 
     @app.route('/info')
     def get_all_companies_info():
-        return get_all_information()
+        return Controller.get_all_information()
 
     @app.route('/info/<ticker>')
     def get_company_info(ticker):
-        return get_company_information(ticker)
+        return Controller.get_company_information(ticker)
 
     @app.route('/historical/<ticker>')
     def get_company_historical_price_data(ticker):
-        return get_company_price_history(ticker)
+        return Controller.get_company_price_history(ticker)
 
     return app
 
