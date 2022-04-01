@@ -5,7 +5,7 @@ Test assignment for Stacc internship
 python setup.py
 
 # Run app
-set FLASK_APP=src/app
+set FLASK_APP=src/app  
 flask run
 
 ## Run tests
