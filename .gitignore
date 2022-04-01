@@ -83,7 +83,7 @@ flask-api
 ENV/
 
 # data files
-.csv
+*.csv
 
 # PyCharm
 .idea
