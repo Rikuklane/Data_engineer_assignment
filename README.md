@@ -4,7 +4,7 @@ Test assignment for Stacc internship
 ## Set up repo
 python setup.py
 
-# Run app
+## Run app
 set FLASK_APP=src/app  
 flask run
 
